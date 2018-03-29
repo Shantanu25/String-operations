@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int a[3] = {1,4,4};
+   int b[3] = {3,4,7};
+   int c[6] = {0,0,0,0,0,0};
+   int i = 0; int j = 0; int k = 0;
+   cout << "array_1 = " << a[0] << a[1] << a[2] << endl;
+   cout << "array_2 = " << b[0] << b[1] << b[2] << endl;
+ //  cout << "array_3 = " << c[0] << c[1] << c[2] << c[3] << c[4] << c[5] << endl;
+  
+  while(i<4 && j<4) {
+      if(i == 3) {
+        c[i+j] = b[j];
+        j++;
+      }
+      else if(j == 3) {
+        c[i+j] = a[i];
+        i++;
+      }
+       else {    
+       if(a[i]<b[j]) {
+            c[i+j] = a[i];
+            i++;
+       }
+        else if(a[i]>b[j]) {
+            c[i+j] = b[j];
+            j++;
+        }
+        else {
+            c[i+j] = a[i];
+            i++;
+            c[i+j] = b[j];
+            j++;
+       }
+       
+      }
+      k++;
+   }
+   
+   
+   
+    cout << "array_3 = " << c[0] << c[1] << c[2] << c[3] << c[4] << c[5] << endl;
+   
+   cout << "Hello World" << endl; 
+   
+   return 0;
+}
